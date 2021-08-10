@@ -1,1 +1,56 @@
-{"name":"epoch-seconds-issue-77","description":"Node module epoch-seconds-issue-77-issue-77 (:construction: Under construction, usage is not recommended!)","webpackConfigJaid":"universalLib","version":"0.1.0","author":"Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)","devDependencies":{"babel-jest":"^27.0.6","babel-preset-jaid":"^13.1.0","browserslist-config-jaid-universal":"^3.0.0","eslint":"^7.32.0","eslint-config-jaid":"^1.55.0","jest":"^27.0.6","rimraf":"^3.0.2","tsconfig-jaid":"^2.1.1","webpack":"^5.49.0","webpack-config-jaid":"^15.0.0"},"scripts":{"clean":"rimraf dist/","build:prod":"NODE_ENV=production webpack","build:dev":"NODE_ENV=development webpack","test":"npm run build:prod && NODE_ENV=production MAIN=dist/package/production/index.js jest","test:coverage":"npm run test:dev -- --passWithNoTests --json --outputFile dist/jest/stats.json --logHeapUsage --runInBand --coverage --detectOpenHandles","test:dev":"npm run build:dev && NODE_ENV=test MAIN=dist/package/development/index.js jest","test:debug":"npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --runInBand --detectOpenHandles","debug":"npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --colors --runInBand","prepareActionJest":"npm run build:prod"},"homepage":"https://github.com/jaid/epoch-seconds-issue-77","funding":"https://github.com/sponsors/jaid","repository":{"type":"git","url":"https://github.com/jaid/epoch-seconds-issue-77"},"keywords":["1970","date","date-now","epoch","gmt","linux","millis","milliseconds","now","posix","posix-epoch","second","seconds","time","timestamp","unix","unix-epoch","utc"]}
+{
+  "name": "epoch-seconds-issue-77",
+  "description": "Node module epoch-seconds-issue-77-issue-77 (:construction: Under construction, usage is not recommended!)",
+  "webpackConfigJaid": "universalLib",
+  "version": "0.1.0",
+  "author": "Jaid <jaid.jsx@gmail.com> (https://github.com/Jaid)",
+  "devDependencies": {
+    "babel-jest": "^27.0.6",
+    "babel-preset-jaid": "^13.1.0",
+    "browserslist-config-jaid-universal": "^3.0.0",
+    "eslint": "^7.32.0",
+    "eslint-config-jaid": "^1.55.0",
+    "jest": "^27.0.6",
+    "rimraf": "^3.0.2",
+    "tsconfig-jaid": "^2.1.1",
+    "webpack": "^5.49.0",
+    "webpack-config-jaid": "^15.0.0"
+  },
+  "scripts": {
+    "clean": "rimraf dist/",
+    "build:prod": "NODE_ENV=production webpack",
+    "build:dev": "NODE_ENV=development webpack",
+    "test": "npm run build:prod && NODE_ENV=production MAIN=dist/package/production/index.js jest",
+    "test:coverage": "npm run test:dev -- --passWithNoTests --json --outputFile dist/jest/stats.json --logHeapUsage --runInBand --coverage --detectOpenHandles",
+    "test:dev": "npm run build:dev && NODE_ENV=test MAIN=dist/package/development/index.js jest",
+    "test:debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --runInBand --detectOpenHandles",
+    "debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --colors --runInBand",
+    "prepareActionJest": "npm run build:prod"
+  },
+  "homepage": "https://github.com/jaid/epoch-seconds-issue-77",
+  "funding": "https://github.com/sponsors/jaid",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jaid/epoch-seconds-issue-77"
+  },
+  "keywords": [
+    "1970",
+    "date",
+    "date-now",
+    "epoch",
+    "gmt",
+    "linux",
+    "millis",
+    "milliseconds",
+    "now",
+    "posix",
+    "posix-epoch",
+    "second",
+    "seconds",
+    "time",
+    "timestamp",
+    "unix",
+    "unix-epoch",
+    "utc"
+  ]
+}
