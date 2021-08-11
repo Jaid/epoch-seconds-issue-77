@@ -1,9 +1,11 @@
+import configure from "webpack-config-jaid"
+
 import Plugin from "./src/WebpackPlugin.js"
 
 /**
  * @type {import("webpack").Configuration}
  */
-const config = {
+const extra = {
   plugins: [new Plugin],
   target: "web",
   output: {
@@ -11,4 +13,7 @@ const config = {
   },
 }
 
-export default config
+export default configure({
+  documentation: false,
+  extra,
+})

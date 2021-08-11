@@ -1,5 +1,6 @@
 {
   "name": "epoch-seconds-issue-77",
+  "type": "module",
   "description": "Node module epoch-seconds-issue-77-issue-77 (:construction: Under construction, usage is not recommended!)",
   "webpackConfigJaid": "universalLib",
   "version": "0.1.0",
@@ -52,5 +53,8 @@
     "unix",
     "unix-epoch",
     "utc"
-  ]
+  ],
+  "dependencies": {
+    "epoch-seconds": "^3.0.0"
+  }
 }

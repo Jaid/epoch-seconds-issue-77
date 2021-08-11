@@ -1,8 +1,10 @@
 import fsp from "@absolunet/fsp"
+import debug from "debug"
 import path from "path"
 import webpack from "webpack"
 
-const debug = require("debug")("a")
+debugger
+const logDebug = debug("a")
 
 export default class PkgBannerPlugin {
 
@@ -10,7 +12,7 @@ export default class PkgBannerPlugin {
    * @param {import("webpack").Compiler} compiler
    */
   apply(compiler) {
-    debug("%O", compiler.options)
+    logDebug("%O", compiler.options)
   }
 
 }
