@@ -55,6 +55,7 @@
     "utc"
   ],
   "dependencies": {
-    "epoch-seconds": "^3.0.0"
+    "epoch-seconds": "^3.0.0",
+    "webpack-merge": "^5.8.0"
   }
 }
