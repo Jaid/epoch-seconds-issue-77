@@ -14,8 +14,7 @@
     "jest": "^27.0.6",
     "rimraf": "^3.0.2",
     "tsconfig-jaid": "^2.1.1",
-    "webpack": "^5.50.0",
-    "webpack-config-jaid": "^15.0.0"
+    "webpack": "^5.50.0"
   },
   "scripts": {
     "clean": "rimraf dist/",
@@ -26,7 +25,8 @@
     "test:dev": "npm run build:dev && NODE_ENV=test MAIN=dist/package/development/index.js jest",
     "test:debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --runInBand --detectOpenHandles",
     "debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --colors --runInBand",
-    "prepareActionJest": "npm run build:prod"
+    "prepareActionJest": "npm run build:prod",
+    "testOutput": "node --input-type=module -e 'import a from \"./dist/testOutput/index.js\"'"
   },
   "homepage": "https://github.com/jaid/epoch-seconds-issue-77",
   "funding": "https://github.com/sponsors/jaid",
@@ -55,7 +55,15 @@
     "utc"
   ],
   "dependencies": {
+    "clean-webpack-plugin": "^4.0.0-alpha.0",
+    "copy-webpack-plugin": "^9.0.1",
+    "debug": "^4.3.2",
     "epoch-seconds": "^3.0.0",
+    "pkg-banner-webpack-plugin": "^1.2.1",
+    "publishimo-webpack-plugin": "^4.0.0",
+    "read-pkg": "^7.0.0",
+    "terser-webpack-plugin": "^5.1.4",
+    "webpack-cli": "^4.8.0",
     "webpack-merge": "^5.8.0"
   }
 }
