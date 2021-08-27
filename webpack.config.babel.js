@@ -115,12 +115,12 @@ const typeConfig = {
       type: "module", // https://webpack.js.org/configuration/output/#librarytarget-module
     },
   },
-   externals: ({request}, callback) => { // eslint-disable-line promise/prefer-await-to-callbacks
-      if (pkg.dependencies?.[request] || pkg.peerDependencies?.[request]) {
-        return callback(null, `module ${request}`) // eslint-disable-line promise/prefer-await-to-callbacks
-      }
-      callback() // eslint-disable-line promise/prefer-await-to-callbacks
+  externals: ({request}, callback) => { // eslint-disable-line promise/prefer-await-to-callbacks
+    if (pkg.dependencies?.[request] || pkg.peerDependencies?.[request]) {
+      return callback(null, `module ${request}`) // eslint-disable-line promise/prefer-await-to-callbacks
     }
+    callback() // eslint-disable-line promise/prefer-await-to-callbacks
+  }
 }
 
 /**
