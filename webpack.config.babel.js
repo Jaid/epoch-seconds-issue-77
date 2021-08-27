@@ -3,6 +3,9 @@ import path from "node:path"
 import {CleanWebpackPlugin} from "clean-webpack-plugin"
 import CopyWebpackPlugin from "copy-webpack-plugin"
 import PkgBannerPlugin from "pkg-banner-webpack-plugin"
+import fs from "fs"
+
+const pkg = JSON.parse(fs.readFileSync("./package.json"))
 
 const entryFolder = "P:/Git/epoch-seconds-issue-77/src"
 
@@ -73,7 +76,7 @@ const baseConfig = {
         noErrorOnMissing: true
       }]
     }),
-    new PkgBannerPlugin
+    // new PkgBannerPlugin
   ],
   output: {
     path: options.outDir,
@@ -99,25 +102,32 @@ const baseConfig = {
  * @type {import("webpack").Configuration}
  */
 const typeConfig = {
+  optimization: {
+    minimize:false
+  },
   experiments: {
-    outputModule: true
+    outputModule: true, // https://webpack.js.org/configuration/experiments/#experimentsoutputmodule
   },
   output: {
-    // TODO libraryTarget should be “module” as soon as it's better supported by Webpack. “outputModule” is currently only an experiment, see https://webpack.js.org/configuration/experiments/
-    libraryTarget: "module",
-    // globalObject: "this",
-    // library: "epochSecondsIssue77"
-  }
+    module: true, // https://webpack.js.org/configuration/output/#outputmodule
+    filename: "index.mjs", // https://webpack.js.org/configuration/output/#outputfilename
+    library: {
+      type: "module", // https://webpack.js.org/configuration/output/#librarytarget-module
+    },
+  },
+   externals: ({request}, callback) => { // eslint-disable-line promise/prefer-await-to-callbacks
+      if (pkg.dependencies?.[request] || pkg.peerDependencies?.[request]) {
+        return callback(null, `module ${request}`) // eslint-disable-line promise/prefer-await-to-callbacks
+      }
+      callback() // eslint-disable-line promise/prefer-await-to-callbacks
+    }
 }
 
 /**
  * @type {import("webpack").Configuration}
  */
 const extraConfig = {
-  target: "web",
-  output: {
-    chunkFormat: "module",
-  },
+  target: "node16",
 }
 
 export default merge([baseConfig, typeConfig, extraConfig])

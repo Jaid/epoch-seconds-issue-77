@@ -26,7 +26,7 @@
     "test:debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --runInBand --detectOpenHandles",
     "debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --colors --runInBand",
     "prepareActionJest": "npm run build:prod",
-    "testOutput": "node --input-type=module -e 'import a from \"./dist/testOutput/index.js\"'"
+    "testOutput": "node --input-type=module -e 'import a from \"./dist/testOutput/index.mjs\"; const b = new a; b.print()'"
   },
   "homepage": "https://github.com/jaid/epoch-seconds-issue-77",
   "funding": "https://github.com/sponsors/jaid",
