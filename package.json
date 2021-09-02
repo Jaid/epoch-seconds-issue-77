@@ -20,13 +20,7 @@
     "clean": "rimraf dist/",
     "build:prod": "NODE_ENV=production webpack",
     "build:dev": "NODE_ENV=development webpack",
-    "test": "npm run build:prod && NODE_ENV=production MAIN=dist/package/production/index.js jest",
-    "test:coverage": "npm run test:dev -- --passWithNoTests --json --outputFile dist/jest/stats.json --logHeapUsage --runInBand --coverage --detectOpenHandles",
-    "test:dev": "npm run build:dev && NODE_ENV=test MAIN=dist/package/development/index.js jest",
-    "test:debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --runInBand --detectOpenHandles",
-    "debug": "npm run build:dev && DEBUG=\"$npm_package_name,$npm_package_name:*\" NODE_ENV=test MAIN=dist/package/development/index.js jest --colors --runInBand",
-    "prepareActionJest": "npm run build:prod",
-    "testOutput": "node --input-type=module -e 'import a from \"./dist/testOutput/index.mjs\"; const b = new a; b.print()'"
+    "testOutput": "node --input-type=module -e 'import a from \"./dist/testOutput/main.mjs\"; const b = new a; b.print()'"
   },
   "homepage": "https://github.com/jaid/epoch-seconds-issue-77",
   "funding": "https://github.com/sponsors/jaid",
