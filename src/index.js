@@ -8,7 +8,7 @@ export default class MessagePrinter  {
     this.logDebug = debug("main")
   }
   print() {
-     this.logDebug(debugMessage)
-     console.log(consoleMessage)
+    this.logDebug(debugMessage)
+    console.log(consoleMessage)
   }
 }
