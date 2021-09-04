@@ -14,7 +14,7 @@
     "jest": "^27.0.6",
     "rimraf": "^3.0.2",
     "tsconfig-jaid": "^2.1.1",
-    "webpack": "^5.51.1"
+    "webpack": "^5.52.0"
   },
   "scripts": {
     "clean": "rimraf dist/",

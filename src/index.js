@@ -11,4 +11,7 @@ export default class MessagePrinter  {
     this.logDebug(debugMessage)
     console.log(consoleMessage)
   }
+  get2() {
+    return 2
+  }
 }

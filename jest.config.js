@@ -1,4 +1,4 @@
-module.exports = {
+export default {
   testEnvironment: "node",
   coverageDirectory: "<rootDir>/dist/jest/coverage",
   collectCoverageFrom: [

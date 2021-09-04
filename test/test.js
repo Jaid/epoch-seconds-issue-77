@@ -1,7 +1,7 @@
 import {expect, it} from "@jest/globals"
 import path from "path"
 
-const indexModule = require(process.env.MAIN ? path.resolve(process.env.MAIN) : path.join(__dirname, "..", "src"))
+const indexModule = import(process.env.MAIN ? path.resolve(process.env.MAIN) : path.join(__dirname, "..", "src"))
 
 /**
  * @type { import("../src") }
