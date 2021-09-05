@@ -102,9 +102,9 @@ const baseConfig = {
  * @type {import("webpack").Configuration}
  */
 const typeConfig = {
-  // optimization: {
-  //   minimize: false
-  // },
+  optimization: {
+    minimize: false
+  },
   experiments: {
     outputModule: true, // https://webpack.js.org/configuration/experiments/#experimentsoutputmodule
   },
