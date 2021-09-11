@@ -1,9 +1,10 @@
-import {merge} from "webpack-merge"
 import path from "node:path"
+
 import {CleanWebpackPlugin} from "clean-webpack-plugin"
 import CopyWebpackPlugin from "copy-webpack-plugin"
-import PkgBannerPlugin from "pkg-banner-webpack-plugin"
 import fs from "fs"
+import PkgBannerPlugin from "pkg-banner-webpack-plugin"
+import {merge} from "webpack-merge"
 
 const pkg = JSON.parse(fs.readFileSync("./package.json"))
 
@@ -12,7 +13,7 @@ const entryFolder = "P:/Git/epoch-seconds-issue-77/src"
 const options = {
   development: false,
   packageRoot: "P:/Git/epoch-seconds-issue-77",
-  outDir: "P:/Git/epoch-seconds-issue-77/dist/testOutput"
+  outDir: "P:/Git/epoch-seconds-issue-77/dist/testOutput",
 }
 
 /**
@@ -71,10 +72,12 @@ const baseConfig = {
     //   minimize: !options.development,
     // }),
     new CopyWebpackPlugin({
-      patterns: [{
-        from: "license.txt",
-        noErrorOnMissing: true
-      }]
+      patterns: [
+        {
+          from: "license.txt",
+          noErrorOnMissing: true,
+        },
+      ],
     }),
     // new PkgBannerPlugin
   ],
@@ -103,7 +106,7 @@ const baseConfig = {
  */
 const typeConfig = {
   optimization: {
-    minimize: false
+    minimize: false,
   },
   experiments: {
     outputModule: true, // https://webpack.js.org/configuration/experiments/#experimentsoutputmodule
@@ -120,7 +123,7 @@ const typeConfig = {
       return callback(null, `module ${request}`) // eslint-disable-line promise/prefer-await-to-callbacks
     }
     callback() // eslint-disable-line promise/prefer-await-to-callbacks
-  }
+  },
 }
 
 /**
